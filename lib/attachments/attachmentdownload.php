@@ -103,7 +103,7 @@ if ($args->id)
         header('Content-Length: '.$attachmentInfo['file_size']);
         header("Content-Disposition: inline; filename=\"{$attachmentInfo['file_name']}\"");
         header("Content-Description: Download Data");
-        echo $content;
+        echo base64_decode($content);
         exit();
       }      
     }  
